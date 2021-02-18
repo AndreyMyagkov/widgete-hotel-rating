@@ -1,8 +1,10 @@
-# Виджет рейтинга отеля на сервисе Booking.com
-Выводит на странице сайта виджет, который отображает название отеля и рейтинг отеля на сервисе https://booking.com. Размеры вджета 150х150 px. В виджете настраивается позиция его вывода. При необходимости виджет можно закрыть кнопкой сроком на 1 неделю.
+# Виджет рейтинга отеля на сервисах Booking.com и tripadvisor.ru
+Выводит на странице сайта виджет, который отображает название отеля и рейтинг отеля на сервисе https://booking.com и/или https://www.tripadvisor.ru/. Размеры вджета 150х170 px. При необходимости виджет можно закрыть кнопкой сроком на сессию браузера.
+
+В виджете настраивается позиция его вывода, рейтинг от Booking и/или Tripadvisor
 
 
-![Widgete preview](preview.png)
+![Widgete preview](preview.gif)
 
 ## Установка
 
@@ -12,7 +14,8 @@
 <script>
     _7vBR = {
         id: 211,
-        position: 'left bottom'
+        position: 'left bottom',
+        mode: 'all'
     };
     var s = document.createElement('script');
     s.type = 'text/javascript';
@@ -29,6 +32,8 @@
 **id** — id отеля
 
 **position** — позиция вывода виджета 
+
+**mode** - all | booking | tripadvisor
 
 ### Позиции вывода виджета
 left top|center|bottom
