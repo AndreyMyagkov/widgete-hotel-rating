@@ -27,11 +27,14 @@
 Где:
 
 **id** — id отеля
+
 **position** — позиция вывода виджета 
 
 ### Позиции вывода виджета
 left top|center|bottom
+
 center bottom
+
 right top|center|bottom
 
 ## Регистрация виджета
