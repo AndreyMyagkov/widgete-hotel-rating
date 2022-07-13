@@ -14,7 +14,8 @@ const APIURL = 'https://reviews.tourhotel24.ru/api?type=rating&hotel=';
 const paramsDefault={
     'id': null,
     'position': 'left bottom',
-    'mode': 'tripadvisor'  // all | booking
+    'mode': 'tripadvisor',  // all | booking
+    'nocopy': false
 }
 
 const widgetStyle = {
@@ -108,7 +109,7 @@ if (!params.id || !(!isNaN(parseFloat(params.id)) && isFinite(params.id))) {
                 createWidgete(params);
                 setTimeout(() => {
                     
-                    renderWidgete(bookingTemplate, tripTemplate);
+                    renderWidgete(bookingTemplate, tripTemplate, params.nocopy);
                     showWidgete();
                     setEvents();
                 }, 100);
@@ -322,7 +323,7 @@ function createWidgete(params) {
 
     }
 
-    function renderWidgete(booking, trip) {
+    function renderWidgete(booking, trip, nocopy) {
     const css = `
     <style>
         * {
@@ -603,7 +604,9 @@ function createWidgete(params) {
 
     `;
 
-
+    const copyTpl = (nocopy) => {
+        return (nocopy ? '' : '<div id="_7vBookingRating__copy">Виджет от <a href="http://saitotelya.ru/" target="_blank">saitotelya.ru</a></div>');
+    }
     const template=`
         ${css}
         <div id="_7vWidgeteWrapper">
@@ -618,7 +621,7 @@ function createWidgete(params) {
 
             ${trip}
 
-            <div id="_7vBookingRating__copy">Виджет от <a href="http://saitotelya.ru/" target="_blank">saitotelya.ru</a></div>
+            ${copyTpl(nocopy)}
 
         </div>
         `

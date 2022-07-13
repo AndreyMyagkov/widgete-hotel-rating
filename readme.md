@@ -10,12 +10,13 @@
 
 Разместите на странице следующий код:
 ```html
-<!-- BEGIN BOOKING RATING CODE {literal} -->
+<!-- BEGIN WIDGETE RATING CODE {literal} -->
 <script>
     _7vBR = {
         id: 211,
         position: 'left bottom',
-        mode: 'all'
+        mode: 'all',
+        nocopy: false
     };
     var s = document.createElement('script');
     s.type = 'text/javascript';
@@ -24,7 +25,7 @@
     var ss = document.getElementsByTagName('script')[0];
     ss.parentNode.insertBefore(s, ss);
 </script>
-<!-- {/literal} END JBOOKING RATING CODE  -->
+<!-- {/literal} END WIDGETE RATING CODE  -->
 ```
 
 Где:
@@ -34,6 +35,8 @@
 **position** — позиция вывода виджета 
 
 **mode** - all | booking | tripadvisor
+
+**nocopy** - скрыть копирайт внизу виджета: true | false
 
 ### Позиции вывода виджета
 left top|center|bottom
